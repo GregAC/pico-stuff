@@ -1,9 +1,9 @@
 PWM Audio Pico Demo
 -------------------
 
-This is the code described in my (Playing with the Pico Part 3
-blog)[https://gregchadwick.co.uk/blog/playing-with-the-pico-pt3]. Read that for
-full details.
+This is the code described in my blog:
+https://gregchadwick.co.uk/blog/playing-with-the-pico-pt3/. Read that for full
+details.
 
 The files present are:
 

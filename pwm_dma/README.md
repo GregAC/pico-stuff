@@ -1,8 +1,9 @@
 PWM DMA Pico Demo
 -----------------
 
-This is the code described in my https://gregchadwick.co.uk/blog/playing-with-the-pico-pt2/. Read that for
-full details.
+This is the code described in my blog:
+https://gregchadwick.co.uk/blog/playing-with-the-pico-pt2/. Read that for full
+details.
 
 The files present are:
 
