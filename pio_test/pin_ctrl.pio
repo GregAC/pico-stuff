@@ -1,0 +1,7 @@
+.program pin_ctrl
+    pull block  ; Grab next command word
+    out pins, 2 ; Bottom 2 bits are next pin setting
+    out x, 30   ; Other 30 bits give a delay
+wait_loop:
+    jmp x--, wait_loop ; Delay for (x + 1) cycles
+.wrap
