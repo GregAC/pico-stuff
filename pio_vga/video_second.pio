@@ -1,0 +1,26 @@
+; sync program
+.program sync_out
+    pull ; get next command word
+    out pins, 2 ; first 2 bits are hsync/vsync
+    out x, 14 ; next 14 bits are delay
+    out exec, 16 ; final 16 bits are instruction to execute
+wait_loop:
+    jmp x--, wait_loop ; wait for the given delay value
+.wrap
+
+; line program
+.program line_out
+    wait 1 irq  4 ; wait til triggered by sync SM
+    set x, 31 ; Setup x as a pixel counter (x = 319)
+    in x, 5
+    set x, 9
+    in x, 27
+    mov x, isr
+line_loop:
+    pull ifempty
+    out pins, 16 [7] ; output to the pins and delay (to give 10 cycles per loop)
+    jmp x--, line_loop ; output next pixel if we have pixels left
+end:
+    set x, 0 ; output a 0 pixel after the visible line
+    mov pins, x
+.wrap
