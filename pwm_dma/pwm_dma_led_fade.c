@@ -19,7 +19,7 @@ int main()
         // We need a value from 0 - (2^16 - 1), i ranges from 0 - 255. Squaring here gives us
         // almost the full range of values whilst provided some gamma correction to give a more
         // linear fade effect.
-        fade[i] = 128 * 128;
+        fade[i] = (i * i) << 16;
     }
 
     // Setup DMA channel to drive the PWM
